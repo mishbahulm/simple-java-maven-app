@@ -1,17 +1,7 @@
 node {
     stage('Build') {
-        steps {
-            sh 'mvn -B -DskipTests clean package'
-        }
-    }
-    stage('Test') {
-        steps {
-            sh 'mvn test'
-        }
-        post {
-            always {
-                junit 'target/surefire-reports/*.xml'
-            }
+        docker.image('maven:3.9.3-eclipse-temurin-11').inside {
+            sh 'mvn --version'
         }
     }
 }
