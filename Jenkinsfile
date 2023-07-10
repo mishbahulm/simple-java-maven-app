@@ -5,6 +5,6 @@ node {
         }
     }
     stage('Test') {
-        sh '/usr/share/maven/bin/mvn test'
+        sh 'mvn test'
     }
 }
