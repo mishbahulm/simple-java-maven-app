@@ -4,4 +4,7 @@ node {
             sh 'mvn --version'
         }
     }
+    stage('Test') {
+        sh 'mvn test'
+    }
 }
