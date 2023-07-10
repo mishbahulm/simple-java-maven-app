@@ -5,6 +5,8 @@ node {
         }
     }
     stage('Test') {
-        sh 'mvn test'
+        docker.image('maven:3.9.0').inside {
+            sh 'mvn test'
+        }
     }
 }
