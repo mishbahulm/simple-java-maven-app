@@ -20,7 +20,7 @@ public class AppTest
     public void testAppMessage()
     {
         App app = new App();
-        // this is comment
+        // this is comment 1
         assertEquals("Hello, World!!", app.getMessage());
     }
 }
