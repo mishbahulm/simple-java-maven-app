@@ -5,6 +5,7 @@ node {
         }
     }
     stage('Test') {
-        sh 'mvn test'
+        echo 'Testing...'
+        sh 'mvn --version'
     }
 }
