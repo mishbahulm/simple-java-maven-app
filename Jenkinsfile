@@ -7,6 +7,7 @@ node {
     stage('Test') {
         docker.image('maven:3.9.0').inside {
             sh 'mvn test'
+            junit 'target/surefire-reports/*.xml'
         }
     }
 }
