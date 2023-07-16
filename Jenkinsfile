@@ -15,9 +15,9 @@ node {
         input message: 'Lanjutkan ke tahap Deploy? (Klik "Proceed" (melanjutkan eksekusi pipeline ke tahap Deploy) atau "Abort" (menghentikan eksekusi pipeline))'
     }
     stage('Deploy') {
-        // docker.image('maven:3.9.0').inside {            
+        docker.image('maven:3.9.0').inside {            
             sh './jenkins/scripts/deliver.sh'
             sleep(time: 1, unit: 'MINUTES')
-        // }
+        }
     }
 }
