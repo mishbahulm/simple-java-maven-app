@@ -21,38 +21,40 @@ public class App {
 
     public static void main(String[] args) {
 
-        Scanner keyboard = new Scanner(System.in);
+        System.out.println(MESSAGE);
 
-        int computerNumber = (int) (Math.random()*100 + 1);
-        int userAnswer = 0;
-        // System.out.println("The correct guess would be " + computerNumber);
-        int count = 1;
+        // Scanner keyboard = new Scanner(System.in);
 
-        System.out.print("Your Name: ");
-        String name = keyboard.nextLine();
+        // int computerNumber = (int) (Math.random()*100 + 1);
+        // int userAnswer = 0;
+        // // System.out.println("The correct guess would be " + computerNumber);
+        // int count = 1;
 
-        Calendar time = Calendar.getInstance();
-        System.out.println(MESSAGE + name + ", " + decodePeriod(time) + "!");
-        System.out.println("Try to guess the number for less than a minute.");
+        // System.out.print("Your Name: ");
+        // String name = keyboard.nextLine();
 
-        while (userAnswer != computerNumber)
-        {
-            System.out.println("========= Guessing Game =========");
-            System.out.print("Enter a guess (between 1 and 100): ");
+        // Calendar time = Calendar.getInstance();
+        // System.out.println(MESSAGE + name + ", " + decodePeriod(time) + "!");
+        // System.out.println("Try to guess the number for less than a minute.");
 
-            try {
-                userAnswer = keyboard.nextInt();
+        // while (userAnswer != computerNumber)
+        // {
+        //     System.out.println("========= Guessing Game =========");
+        //     System.out.print("Enter a guess (between 1 and 100): ");
 
-                System.out.println(determineGuess(userAnswer, computerNumber, count, name));
+        //     try {
+        //         userAnswer = keyboard.nextInt();
 
-                count++;
+        //         System.out.println(determineGuess(userAnswer, computerNumber, count, name));
+
+        //         count++;
                 
-            } catch (Exception e) {
-                System.out.println("Wrong format!\n" + e);
-                break;
-            }
+        //     } catch (Exception e) {
+        //         System.out.println("Wrong format!\n" + e);
+        //         break;
+        //     }
             
-        }  
+        // }  
 
     }
 
