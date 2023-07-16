@@ -13,7 +13,7 @@ public class App {
     public static final String AM = "good morning";
     public static final String PM = "good afternoon";
     public static final String EVE = "good evening";
-    private static final String MESSAGE = "Hello, ";
+    private static final String MESSAGE = "Hello ";
 
     public App() {}
 
@@ -25,7 +25,7 @@ public class App {
         String name = keyboard.nextLine();
             
             Calendar time = Calendar.getInstance();
-            System.out.println(MESSAGE + "there , " + decodePeriod(time) + "!");
+            System.out.println(MESSAGE + "there, " + decodePeriod(time) + "!");
             
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
             LocalDateTime now = LocalDateTime.now();  
