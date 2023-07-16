@@ -13,7 +13,7 @@ node {
         }
     }
     stage('Manual Approval') {
-        input message: 'Lanjutkan ke tahap Deploy? (Klik "Proceed" (melanjutkan eksekusi pipeline ke tahap Deploy) atau "Abort" (menghentikan eksekusi pipeline))'
+        input message: 'Lanjutkan ke tahap Deploy?'
     }
     stage('Deploy') {
         docker.image('maven:3.9.0').inside {            
