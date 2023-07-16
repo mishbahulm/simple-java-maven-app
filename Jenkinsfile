@@ -1,7 +1,9 @@
 node {
     stage('Build') {
         docker.image('maven:3.9.0').inside {
-            sh 'git pull'
+            sh 'pwd'
+            sh 'git status'
+            sh 'git pull origin master'
             sh 'mvn -v /root/.m2:/root/.m2'            
             sh 'mvn -B -DskipTests clean package'
         }
