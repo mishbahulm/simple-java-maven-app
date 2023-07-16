@@ -3,6 +3,8 @@ package com.mycompany.app;
 import java.io.File;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
@@ -32,8 +34,6 @@ public class App {
         String userName = System.getProperty("user.name");
         System.out.println(MESSAGE + userName +", " + decodePeriod(time) + "! This yours system info..");
         System.out.println();
-        
-          
         
         System.out.println("Hostname: " + System.getenv().get("HOSTNAME"));
         System.out.println("System property: " + System.getProperty("user.dir"));
@@ -72,6 +72,17 @@ public class App {
             (double)new File("/").getFreeSpace() /1073741824));
         System.out.println(String.format("Usable space: %.2f GB", 
             (double)new File("/").getUsableSpace() /1073741824));
+        System.out.println();
+
+        System.out.println("CPU info:");
+        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
+        for(Long threadID : threadMXBean.getAllThreadIds()) {
+            ThreadInfo info = threadMXBean.getThreadInfo(threadID);
+            System.out.println("Thread name: " + info.getThreadName());
+            System.out.println("Thread State: " + info.getThreadState());
+            System.out.println(String.format("CPU time: %s ns", 
+            threadMXBean.getThreadCpuTime(threadID)));
+        }
         // System.out.println("More:");
         // System.getenv().forEach((k, v) -> {
         //     System.out.println(k + ":" + v);
